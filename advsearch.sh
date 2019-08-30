@@ -2,6 +2,18 @@
 file_pattern=$1
 string=$2
 dir=$3
+
+usage(){
+  echo "Usage: advsearch [file_pattern] [string to match] (path to search)"
+  exit
+}
+
+if [[ -z $file_pattern ]]
+then
+  usage
+fi
+
+
 if [[ -z $dir ]]
 then
   dir=$(pwd)
@@ -9,6 +21,7 @@ fi
 files=$(locate "$dir/$file_pattern")
 
 files_count=$(echo "$files" | wc -l)
+files_count=$(($files_count-1))
 echo "Updating database..."
 updatedb
 echo "$files_count files to search"
