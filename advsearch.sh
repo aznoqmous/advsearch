@@ -7,7 +7,7 @@ string=$2
 dir=$3
 
 usage(){
-  echolor green "Usage: advsearch {{[file_pattern] [string to match] (path to search)}}"
+  echolor green "Usage: advsearch {{[file_pattern] [string to match] (path to search)}} \n"
   exit
 }
 
