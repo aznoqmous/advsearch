@@ -20,6 +20,10 @@ if [[ -z $dir ]]
 then
   dir=$(pwd)
 fi
+if [[ $dir == '/' ]]
+then
+  dir=''
+fi
 files=$(locate "$dir/$file_pattern")
 
 files_count=$(echo "$files" | wc -l)
